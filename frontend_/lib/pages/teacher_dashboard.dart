@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '/pages/add_course_page.dart';
 import '/pages/course_management_page.dart';
+import '/pages/add_exam.dart';
+import '/pages/analytics.dart';
 
 class TeacherDashboard extends StatefulWidget {
   const TeacherDashboard({super.key});
@@ -480,7 +482,13 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
               icon: Icons.edit_document,
               text: 'Create New Exam',
               isPrimary: true,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const CreateExamPage(),
+                  ),
+                );
+              },
             ),
             _buildActionButton(
               icon: Icons.visibility,
@@ -492,7 +500,13 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
               icon: Icons.bar_chart,
               text: 'View Analytics',
               isPrimary: false,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const AnalyticsPage(),
+                  ),
+                );
+              },
             ),
           ],
         ),
